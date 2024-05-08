@@ -1,4 +1,4 @@
---Display required data from almost 6 tables
+--Display required data from almost 7 tables
 
 SELECT	
   ord.order_id,   
@@ -25,7 +25,8 @@ JOIN sales.store sto
 ON ord.store_id = sto.store_id 
 JOIN sales.staff sta 
 ON ord.staff_id = sta.staff_id 
-GROUP BY 	ord.order_id,    
+GROUP BY 	
+  ord.order_id,    
   CONCAT(cus.first_name, ' ', cus.last_name) AS 'customers', 
   cus.city,   
   cus.state,   
